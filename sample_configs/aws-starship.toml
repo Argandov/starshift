@@ -1,0 +1,225 @@
+	# Inserts a blank line between shell prompts
+add_newline = false
+	# Change command timeout from 500 to 1000 ms
+command_timeout = 1000
+	# Change the default prompt format
+
+# GCLOUD SPECIFIC:
+
+format = """$fill\
+	$directory\
+	$aws\
+	$cmd_duration\
+	$line_break\
+	$character"""
+
+
+[fill]
+symbol = " "
+	# Change the default prompt characters
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+	# Shows an icon that should be included by zshrc script based on the distribution or os
+[env_var.STARSHIP_DISTRO]
+format = '[$env_value](white)'
+variable = "STARSHIP_DISTRO"
+disabled = false
+
+[hostname]
+ssh_symbol = "[ssh](bold yellow)"
+ssh_only = false
+format = " [$hostname](blue)"
+disabled = false
+
+[directory]
+truncation_length = 1
+truncation_symbol = "../"
+#truncation_symbol = ""
+home_symbol = "~"
+read_only_style = "197"
+# read_only in red:
+read_only = " 🔒 "
+format = " [$path]($style)[$read_only]($read_only_style) "
+
+# SYSTEM SPECIFICS -----------------------------------------------------
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+# truncation_length = 4
+truncation_symbol = "…/"
+style = "bold green"
+
+[git_status]
+#format = '[\($all_status$ahead_behind\)]($style) '
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold green"
+conflicted = "🏳"
+up_to_date = " "
+untracked = " "
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+stashed = " "
+modified = " "
+staged = '[++\($count\)](green)'
+renamed = "襁 "
+deleted = " "
+
+[kubernetes]
+format = 'via [ﴱ $context\($namespace\)](bold purple) '
+disabled = false
+
+# (deactivated because of no space left)
+[terraform]
+format = "via [ terraform $version]($style) 壟 [$workspace]($style) "
+disabled = true
+
+[vagrant]
+format = "via [ vagrant $version]($style) "
+disabled = true
+
+[docker_context]
+format = "via [ $context](bold blue) "
+disabled = true
+
+[helm]
+format = "via [ $version](bold purple) "
+disabled = true
+
+[python]
+format = "[$virtualenv]($style) "
+#venv_symbol = "venv "
+style = "bold yellow"
+pyenv_version_name = true
+symbol = " "
+
+[nodejs]
+symbol = " "
+format = "via [ $version](bold green) "
+disabled = true
+
+[ruby]
+symbol = " "
+format = "via [ $version]($style) "
+disabled = true
+
+[gcloud]
+format = '[󰊭:$project@$region]($style) '
+
+[aws]
+format = '󰸏:[$account]($style) in [$region]($style) '
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Debian = " "
+Linux = " "
+Macos = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+[package]
+# symbol = "󰏗 "
+symbol = " Poetry "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+
+[rlang]
+symbol = "󰟔 "
+
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "

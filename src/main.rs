@@ -44,7 +44,7 @@ fn main() {
                     }
                 }
             } else {
-                eprintln!("Could not read directory {preset_dir}");
+                eprintln!("[WARN] Failed to list presets in {preset_dir}. Make sure it exists and has read permissions.");
             }
         }
         Some(Commands::Set { preset_name }) => {
