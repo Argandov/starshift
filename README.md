@@ -50,7 +50,7 @@ A simple CLI to manage and switch between multiple [Starship](https://starship.r
 2. Create a new directory: `mkdir $HOME/.config/starship_presets/`
 3. Move/Copy your own starship TOML presets to this directory, and rename them according to your own specific wants (There are some random presets I placed in this project's [sample_configs](/sample_configs/) folder for some use cases - Don't treat them religiously, they're just samples I made on the fly to clarify the intention of this use cases when I was building the project). 
 4. Compile or install with `cargo`. Place the binary wherever fits your environment best (i.e. `/usr/bin/`).
-5. I recommend adding a line into your .zshrc with: `export STARSHIP_CONFIG="$HOME/.config/starship_presets/minimal.toml"` (Or modify it if you have it already set to $HOME/.config/starship.toml) to set your desired, default starship configuration file, so every new zsh session starts from that preset, and if you need to "switch" between your configurations, then you just run starshift.
+5. By default, you already have your default config file at $HOME/.config/starship.toml which be loaded every time a new shell opens. You can set this one to be your default minimal prompt, then move your custom ones to $HOME/.config/starship_presets/
 
 ## Usage
 
